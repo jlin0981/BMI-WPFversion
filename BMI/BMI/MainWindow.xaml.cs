@@ -75,9 +75,24 @@ namespace BMI
             MessageBox.Show( " 不要理我 " );
         }
 
-        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        private void Sliderheight_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
+            double calculate = 0;
             heightBox.Text = sliderheight.Value.ToString();
+            double w = double.Parse(this.weightBox.Text);
+            double h = double.Parse(this.heightBox.Text)/100;
+            calculate = w / (h * h);
+            Ans.Text = calculate.ToString();
+        }
+
+        private void Sliderweight_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            double calculate = 0;
+            weightBox.Text = sliderweight.Value.ToString();
+            double w = double.Parse(this.weightBox.Text);
+            double h = double.Parse(this.heightBox.Text)/100;
+            calculate = w / (h * h);
+            Ans.Text = calculate.ToString();
         }
     }
 }

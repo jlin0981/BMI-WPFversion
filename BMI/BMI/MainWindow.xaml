@@ -9,16 +9,18 @@
     <StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock Height="18">身高:</TextBlock>
-            <TextBox Width="400" Height="32" Margin="10,15,10,15" x:Name="heightBox" TextChanged="heightBox_TextChanged"></TextBox>
+            <TextBox Width="400" Height="32" Margin="10,15,10,15" x:Name="heightBox" TextChanged="heightBox_TextChanged" Text="10"></TextBox>
             <Button Click="heightClear_Click"  Content="清除" Height="35" Width="58" x:Name="heightClear"></Button>
         </StackPanel>
-        <Slider Minimum="0" Maximum="200" ValueChanged="Slider_ValueChanged" x:Name="sliderheight" ></Slider>
+        <Slider Minimum="0" Maximum="200" ValueChanged="Sliderheight_ValueChanged" x:Name="sliderheight" ></Slider>
         <StackPanel Orientation="Horizontal">
 
             <TextBlock Height="17">體重:</TextBlock>
-            <TextBox Width="400" Height="32" Margin="10,15,10,15" x:Name="weightBox"></TextBox>
+            <TextBox Width="400" Height="32" Margin="10,15,10,15" x:Name="weightBox" Text="10"></TextBox>
             <Button Click="weightClear_Click"  Content="清除" Height="35" Width="58" x:Name="weightClear"></Button>
+            
         </StackPanel>
+        <Slider Minimum="0" Maximum="200" ValueChanged="Sliderweight_ValueChanged" x:Name="sliderweight" ></Slider>
         <Button Click="calculateButton_Click" Height="48" Margin="20,20,20,10">計算</Button>
         <Canvas Background="Blue" Width="100" Height="10">
             <Rectangle Fill="Black" Width="124" Height="122" Canvas.Left="-183" Canvas.Top="95"/>

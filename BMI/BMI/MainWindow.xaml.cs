@@ -74,5 +74,10 @@ namespace BMI
         {
             MessageBox.Show( " 不要理我 " );
         }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            heightBox.Text = sliderheight.Value.ToString();
+        }
     }
 }

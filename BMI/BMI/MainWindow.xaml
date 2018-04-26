@@ -6,19 +6,24 @@
         xmlns:local="clr-namespace:BMI"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-	<StackPanel>
-		<StackPanel Orientation="Horizontal">
-			<TextBlock Height="18">身高:</TextBlock>
-			<TextBox Width="400" Height="32" Margin="10,15,10,15"></TextBox>
-			<Button Click="Button_Click"  Content="清除" Height="35" Width="58"/>
-		</StackPanel>
-		<StackPanel Orientation="Horizontal">
-			<TextBlock Height="17">體重:</TextBlock>
-			<TextBox Width="400" Height="32" Margin="10,15,10,15"></TextBox>
-			<Button Click="Button_Click"  Content="清除" Height="35" Width="58"/>
-		</StackPanel>
-		<Button Click="Button_Click" Height="48" Margin="20,20,20,10">計算</Button>
-		<TextBlock
-                Margin="230,40,230,40"  FontSize="50" Foreground="Red" Text="0" Height="60"/>
-	</StackPanel>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Height="18">身高:</TextBlock>
+            <TextBox Width="400" Height="32" Margin="10,15,10,15" x:Name="heightBox" TextChanged="heightBox_TextChanged"></TextBox>
+            <Button Click="heightClear_Click"  Content="清除" Height="35" Width="58" x:Name="heightClear"></Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+
+            <TextBlock Height="17">體重:</TextBlock>
+            <TextBox Width="400" Height="32" Margin="10,15,10,15" x:Name="weightBox"></TextBox>
+            <Button Click="weightClear_Click"  Content="清除" Height="35" Width="58" x:Name="weightClear"></Button>
+        </StackPanel>
+        <Button Click="calculateButton_Click" Height="48" Margin="20,20,20,10">計算</Button>
+        <Canvas Background="Blue" Width="100" Height="10">
+            <Rectangle Fill="Black" Width="124" Height="122" Canvas.Left="-185" Canvas.Top="-6"/>
+            <Button Canvas.Left="192" Canvas.Top="20" x:Name="NM" Click="NM_Click"> 不要理我</Button>
+        </Canvas>
+        <TextBlock
+                Margin="175,40,174.4,40"  FontSize="50" Foreground="Red" Text="0" Height="60" x:Name="Ans"/>
+    </StackPanel>
 </Window>

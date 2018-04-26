@@ -24,5 +24,55 @@ namespace BMI
         {
             InitializeComponent();
         }
+
+        private void heightBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void weightClear_Click(object sender, RoutedEventArgs e)
+        {
+            // 清除體重資料，方框變紅
+                weightBox.Text = " ";
+                weightBox.Background = Brushes.Red;
+            
+        }
+
+        private void heightClear_Click(object sender, RoutedEventArgs e)
+        {
+            // 清除身高資料，方框變紅
+            heightBox.Text = " ";
+            heightBox.Background = Brushes.Red;
+        }
+
+        private void calculateButton_Click(object sender, RoutedEventArgs e)
+        {
+            // 設變數
+            double calculate = 0;
+            
+            // 排除輸入數字以外的結果
+            try
+            {
+                double w = double.Parse(weightBox.Text);
+                double h = double.Parse(heightBox.Text);
+                calculate = w / (h * h);
+
+            }
+
+            // 要求數字
+            catch
+            {
+                MessageBox.Show( " Please type  numbers " );
+            }
+
+            // 顯示結果
+            Ans.Text = calculate.ToString();
+
+        }
+
+        private void NM_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show( " 不要理我 " );
+        }
     }
 }
